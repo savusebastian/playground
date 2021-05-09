@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include '_navbar.html' %}
+    <div class="container">
+        <h1>Quiz</h1>
+        <p>Radio button - single answer</p>
+        <p class="mb-5">Checkbox - multiple answers</p>
+
+        <form class="mb-4" style="display: flex; flex-direction: column;" action="/quiz/" method="post">
+            {% csrf_token %}
+
+            <p>1. A carnivorous animal eats flesh, what does a nucivorous animal eat?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="radio" id="q1-1" name="q1" value="nuts"/>
+                    <label for="q1-1">Nuts</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q1-2" name="q1" value="nothing"/>
+                    <label for="q1-2">Nothing</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q1-3" name="q1" value="fruit"/>
+                    <label for="q1-3">Fruit</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q1-4" name="q1" value="seaweed"/>
+                    <label for="q1-4">Seaweed</label>
+                </div>
+            </div>
+
+            <p>2. Which species of Brown Bear is not extinct?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="radio" id="q2-1" name="q2" value="california grizzly bear"/>
+                    <label for="q2-1">California Grizzly Bear</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q2-2" name="q2" value="syrian brown bear"/>
+                    <label for="q2-2">Syrian Brown Bear</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q2-3" name="q2" value="atlas bear"/>
+                    <label for="q2-3">Atlas Bear</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q2-4" name="q2" value="mexican grizzly bear"/>
+                    <label for="q2-4">Mexican Grizzly Bear</label>
+                </div>
+            </div>
+
+            <p>3. What do you call a baby bat?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="radio" id="q3-1" name="q3" value="cub"/>
+                    <label for="q3-1">Cub</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q3-2" name="q3" value="chick"/>
+                    <label for="q3-2">Chick</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q3-3" name="q3" value="pup"/>
+                    <label for="q3-3">Pup</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q3-4" name="q3" value="kid"/>
+                    <label for="q3-4">Kid</label>
+                </div>
+            </div>
+
+            <p>4. Which animal was part of an Russian domestication experiment in 1959?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="checkbox" id="q4-1" name="q4" value="alligators"/>
+                    <label for="q4-1">Alligators</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="checkbox" id="q4-2" name="q4" value="foxes"/>
+                    <label for="q4-2">Foxes</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="checkbox" id="q4-3" name="q4" value="bears"/>
+                    <label for="q4-3">Bears</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="checkbox" id="q4-4" name="q4" value="pigeons"/>
+                    <label for="q4-4">Pigeons</label>
+                </div>
+            </div>
+
+            <p>5. What type of creature is a Bonobo?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="checkbox" id="q5-1" name="q5" value="wildcat"/>
+                    <label for="q5-1">Wildcat</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="checkbox" id="q5-2" name="q5" value="parrot"/>
+                    <label for="q5-2">Parrot</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="checkbox" id="q5-3" name="q5" value="ape"/>
+                    <label for="q5-3">Ape</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="checkbox" id="q5-4" name="q5" value="lion"/>
+                    <label for="q5-4">Lion</label>
+                </div>
+            </div>
+
+            <p>6. Which of these species is not extinct?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="checkbox" id="q6-1" name="q6" value="japanese sea lion"/>
+                    <label for="q6-1">Japanese sea lion</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="checkbox" id="q6-2" name="q6" value="tasmanian tiger"/>
+                    <label for="q6-2">Tasmanian tiger</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="checkbox" id="q6-3" name="q6" value="saudi gazell"/>
+                    <label for="q6-3">Saudi gazell</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="checkbox" id="q6-4" name="q6" value="komodo dragon"/>
+                    <label for="q6-4">Komodo dragon</label>
+                </div>
+            </div>
+
+            <p>7. What is the name of the copper-rich protein that creates the blue blood in the Antarctic octopus?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="radio" id="q7-1" name="q7" value="hemocyanin"/>
+                    <label for="q7-1">Hemocyanin</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q7-2" name="q7" value="methionine"/>
+                    <label for="q7-2">Methionine</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q7-3" name="q7" value="cytochrome"/>
+                    <label for="q7-3">Cytochrome</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q7-4" name="q7" value="iron"/>
+                    <label for="q7-4">Iron</label>
+                </div>
+            </div>
+
+            <p>8. What is the collective noun for a group of crows?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="radio" id="q8-1" name="q8" value="pack"/>
+                    <label for="q8-1">Pack</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q8-2" name="q8" value="murder"/>
+                    <label for="q8-2">Murder</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q8-3" name="q8" value="gaggle"/>
+                    <label for="q8-3">Gaggle</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q8-4" name="q8" value="herd"/>
+                    <label for="q8-4">Herd</label>
+                </div>
+            </div>
+
+            <p>9. What colour is the female blackbird?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="radio" id="q9-1" name="q9" value="brown"/>
+                    <label for="q9-1">Brown</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q9-2" name="q9" value="black"/>
+                    <label for="q9-2">Black</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q9-3" name="q9" value="white"/>
+                    <label for="q9-3">White</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q9-4" name="q9" value="yellow"/>
+                    <label for="q9-4">Yellow</label>
+                </div>
+            </div>
+
+            <p>10. What is the collective noun for rats?</p>
+            <div class="radio-row">
+                <div class="radio-column">
+                    <input type="radio" id="q10-1" name="q10" value="drift"/>
+                    <label for="q10-1">Drift</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q10-2" name="q10" value="race"/>
+                    <label for="q10-2">Race</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q10-3" name="q10" value="pack"/>
+                    <label for="q10-3">Pack</label>
+                </div>
+
+                <div class="radio-column">
+                    <input type="radio" id="q10-4" name="q10" value="mischief"/>
+                    <label for="q10-4">Mischief</label>
+                </div>
+            </div>
+
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}

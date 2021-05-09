@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Listings</h1>
+
+    <div class="row row-cols-1 row-cols-md-3">
+        {% if items %}
+            {% for item in items %}
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="{{ item.photo_main.url }}" class="card-img-top" alt="{{ item.title }}">
+                    <div class="card-body">
+                        <p class="card-text">Address: {{ item.state }}, {{ item.city }}, {{ item.address }}</p>
+                        <p class="card-text">Description: {{ item.description }}</p>
+                        <p class="card-text">Price: {{ item.price }}</p>
+                        <p class="card-text">Bedrooms: {{ item.bedrooms }}</p>
+                        <p class="card-text">Garages: {{ item.garage }}</p>
+                        <p class="card-text">Area: {{ item.area }}</p>
+                        <p class="card-text">Lot Size: {{ item.lot_size }}</p>
+                        <p class="card-text">Date added: {{ item.list_date }}</p>
+                        <a href="{% url 'listing' listing_id=item.id %}" class="btn btn-primary">View property</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        {% else %}
+        <div class="col-md-12">
+            <p>No items available</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

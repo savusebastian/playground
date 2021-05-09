@@ -1,0 +1,23 @@
+<header class="mb-4">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="navbar-links">
+            <a class="navbar-brand" href="{% url 'home' %}">Tasks</a>
+            <a class="navbar-brand" href="{% url 'weather' %}">Weather</a>
+            <a class="navbar-brand" href="{% url 'quiz' %}">Quiz</a>
+            <a class="navbar-brand" href="{% url 'flex' %}">Learning Flex</a>
+            <a class="navbar-brand" href="{% url 'charts' %}">Charts</a>
+        </div>
+
+        <form class="form-inline search-home" action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2 search" type="search" name="search" placeholder="Search" aria-label="Search" v-model="searchInput" @keyup="searchFilter" />
+            <button class="btn btn-warning" type="submit" v-bind:disabled="searchInput.length < 1">Search</button>
+        </form>
+
+        <form class="form-inline search-weather" action="{% url 'weather' %}" method="post">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2 search" type="search" name="search_location" placeholder="Search Location" aria-label="Search" v-model="search_locationInput" />
+            <button class="btn btn-warning" type="submit" v-bind:disabled="search_locationInput.length < 1">Search</button>
+        </form>
+    </nav>
+</header>

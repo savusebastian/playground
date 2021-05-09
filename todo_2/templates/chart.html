@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include '_navbar.html' %}
+
+<div class="container">
+    <h1>Charts</h1>
+</div>
+{% endblock %}
+
+{% block canvas %}
+<div class="chartWrapper">
+    <canvas id="dataChart" height="1" width="4"></canvas>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+    var ctx = document.getElementById('dataChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: [
+                {% for name in sorted_name %}
+                    '{{ name }}',
+                {% endfor %}
+            ],
+            datasets: [{
+                label: 'value',
+                data: {{ sorted_score }},
+                backgroundColor: [
+                    {% for name in sorted_name %}
+                        {% if name.0 == 'A' %}
+                            'rgba(237, 28, 36, 0.3)',
+                        {% else %}
+                            'rgba(0, 113, 197, 0.3)',
+                        {% endif %}
+                    {% endfor %}
+                ],
+                borderColor: [
+                    {% for name in sorted_name %}
+                        {% if name.0 == 'A' %}
+                            'rgb(237, 28, 36)',
+                        {% else %}
+                            'rgb(0, 113, 197)',
+                        {% endif %}
+                    {% endfor %}
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,84 @@
+.home .search-home{
+    display: block;
+}
+
+.search-home{
+    display: none;
+}
+
+.home .search-weather{
+    display: none;
+}
+
+.navbar a{
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-right: 0;
+}
+
+.navbar a:hover, .navbar a:focus{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.weather{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.city{
+    padding: 10px 25px;
+    border-radius: 5px;
+    background: rgba(200, 200, 200, 0.85);
+}
+
+.weather p{
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.radio-row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.radio-column{
+    width: 20%;
+}
+
+form p{
+    margin-bottom: 10px;
+}
+
+label{
+    margin: 0;
+}
+
+.learning-flex{
+    padding: 20px;
+    background: black;
+    color: white;
+
+    /* Flex here */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+article{
+    flex-basis: calc(calc(500px - 100%) * 999);
+    flex-grow: 1;
+    /* width: 30%; */
+    margin-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.nada{
+    display: none !important;
+}

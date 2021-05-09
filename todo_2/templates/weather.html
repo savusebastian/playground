@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include '_navbar.html' %}
+
+<div class="container weather">
+    {% if weather_dict.name != 'None' %}
+        <p class="city">{{ weather_dict.name }}, {{ weather_dict.sys.country }}</p>
+        <p>{{ date }}</p>
+        <p>{{ weather_dict.main.temp }}&deg;C</p>
+        <p>{{ weather_dict.weather.0.description }}</p>
+    {% else %}
+        <p>Search for a city up top</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+.navbar a{
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-right: 0;
+}
+
+.navbar a:hover, .navbar a:focus{
+    background: rgba(0, 0, 0, 0.2);
+}

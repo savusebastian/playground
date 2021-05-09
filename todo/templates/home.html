@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Home</h1>
+
+    <form class="" action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        {{ form.title }}
+        <button type="submit" name="button">Create Task</button>
+    </form>
+
+    {% for task in tasks %}
+        <div>
+            {% if task.completed == True %}
+                <p><strike>{{ task.title }}</strike></p>
+            {% else %}
+                <p>{{ task.title }}</p>
+            {% endif %}
+            <a href="{% url 'updatetask' task.id %}">Update</a>
+            <a href="{% url 'deletetask' task.id %}">Delete</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
